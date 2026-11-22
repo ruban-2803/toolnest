@@ -1,0 +1,234 @@
+---
+import "../styles/global.css";
+
+const title = "ToolNest — Free Online Tools for Everyday Work";
+const description = "Simple, free online tools for work, study and everyday life. Count words, format text and validate JSON — right in your browser.";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f9f8" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="ToolNest home">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span>Tool<span>Nest</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="header-cta" href="#tools">Explore tools <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY DIGITAL TOOLKIT</div>
+          <h1>Get useful things<br /><span>done, simply.</span></h1>
+          <p class="hero-description">A growing collection of free, practical tools for work, study and everyday life. No account. No fuss.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#tools">Explore free tools <span aria-hidden="true">→</span></a>
+            <span class="privacy-note"><span aria-hidden="true">✓</span> Works right in your browser</span>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-icon">✳</div>
+            <div><strong>Simple by design</strong><span>Focused tools that do one job well.</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of ToolNest utility cards">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="floating-card card-main">
+            <div class="mini-card-top"><span class="mini-dot"></span><span>TOOLNEST WORKSPACE</span><span class="mini-menu">•••</span></div>
+            <div class="visual-heading">Your tools, <em>within reach.</em></div>
+            <div class="visual-tool-grid">
+              <div class="visual-tool"><span class="visual-tool-icon green">Aa</span><b>Text tools</b><small>Write with clarity</small></div>
+              <div class="visual-tool"><span class="visual-tool-icon blue">{ }</span><b>JSON tools</b><small>Format with ease</small></div>
+              <div class="visual-tool"><span class="visual-tool-icon orange">#</span><b>Word count</b><small>Know your numbers</small></div>
+              <div class="visual-tool"><span class="visual-tool-icon purple">↗</span><b>More tools</b><small>Coming soon</small></div>
+            </div>
+            <div class="visual-status"><span></span> Ready when you are</div>
+          </div>
+          <div class="floating-tag tag-top">✦ Free to use</div>
+          <div class="floating-tag tag-bottom">⌘ No sign-up needed</div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="ToolNest benefits">
+        <div><span>✓</span> Free to use</div>
+        <div><span>◈</span> No account required</div>
+        <div><span>⌁</span> Privacy-minded</div>
+        <div><span>↗</span> Made for everyone</div>
+      </section>
+
+      <section class="tools-section" id="tools">
+        <div class="section-heading">
+          <div><div class="eyebrow">THE TOOLKIT</div><h2>Small tools. <span>Big help.</span></h2></div>
+          <p>Choose a tool and get straight to work. More useful utilities are on the way.</p>
+        </div>
+
+        <div class="tool-layout">
+          <aside class="tool-sidebar" aria-label="Tool categories">
+            <div class="sidebar-label">AVAILABLE TOOLS</div>
+            <button class="tool-nav active" data-tool="counter"><span class="nav-icon nav-orange">Aa</span><span><b>Word counter</b><small>Count and measure text</small></span><span class="nav-arrow">›</span></button>
+            <button class="tool-nav" data-tool="formatter"><span class="nav-icon nav-green">Tt</span><span><b>Text formatter</b><small>Clean and transform text</small></span><span class="nav-arrow">›</span></button>
+            <button class="tool-nav" data-tool="json"><span class="nav-icon nav-blue">{ }</span><span><b>JSON formatter</b><small>Format and validate JSON</small></span><span class="nav-arrow">›</span></button>
+            <div class="sidebar-coming"><span class="coming-spark">✳</span><b>More tools coming</b><small>We're building a more useful toolkit, one tool at a time.</small></div>
+          </aside>
+
+          <div class="tool-workspace">
+            <section class="tool-panel active" id="panel-counter" aria-labelledby="counter-title">
+              <div class="panel-header"><div><div class="panel-kicker">TEXT ANALYSIS</div><h3 id="counter-title">Word & character counter</h3><p>Get an instant breakdown of your text.</p></div><span class="panel-badge">FREE TOOL</span></div>
+              <label class="field-label" for="counter-input">Your text</label>
+              <textarea id="counter-input" class="tool-textarea" placeholder="Start typing or paste your text here..." spellcheck="true"></textarea>
+              <div class="stats-grid">
+                <div class="stat-card"><span>Words</span><strong id="word-count">0</strong></div>
+                <div class="stat-card"><span>Characters</span><strong id="char-count">0</strong></div>
+                <div class="stat-card"><span>No spaces</span><strong id="no-space-count">0</strong></div>
+                <div class="stat-card"><span>Sentences</span><strong id="sentence-count">0</strong></div>
+              </div>
+              <div class="panel-footer"><span id="counter-status" class="helper-text">Your text stays in this browser.</span><button class="text-button" id="counter-clear" type="button">Clear text <span>↗</span></button></div>
+            </section>
+
+            <section class="tool-panel" id="panel-formatter" aria-labelledby="formatter-title" hidden>
+              <div class="panel-header"><div><div class="panel-kicker">TEXT PRODUCTIVITY</div><h3 id="formatter-title">Text formatter</h3><p>Transform text in one click.</p></div><span class="panel-badge">FREE TOOL</span></div>
+              <label class="field-label" for="formatter-input">Your text</label>
+              <textarea id="formatter-input" class="tool-textarea" placeholder="Paste or type text to format..."></textarea>
+              <div class="format-actions">
+                <button type="button" class="format-button" data-format="upper">UPPERCASE</button>
+                <button type="button" class="format-button" data-format="lower">lowercase</button>
+                <button type="button" class="format-button" data-format="title">Title Case</button>
+                <button type="button" class="format-button" data-format="sentence">Sentence case</button>
+                <button type="button" class="format-button" data-format="trim">Remove extra spaces</button>
+                <button type="button" class="format-button" data-format="lines">Remove empty lines</button>
+              </div>
+              <div class="panel-footer"><span id="formatter-status" class="helper-text">Choose a formatting action above.</span><div class="footer-actions"><button class="text-button" id="formatter-clear" type="button">Clear</button><button class="small-primary" id="formatter-copy" type="button">Copy result</button></div></div>
+            </section>
+
+            <section class="tool-panel" id="panel-json" aria-labelledby="json-title" hidden>
+              <div class="panel-header"><div><div class="panel-kicker">DEVELOPER UTILITIES</div><h3 id="json-title">JSON formatter</h3><p>Format, validate or minify JSON data.</p></div><span class="panel-badge">FREE TOOL</span></div>
+              <label class="field-label" for="json-input">JSON input</label>
+              <textarea id="json-input" class="tool-textarea code-textarea" placeholder='{"name":"ToolNest","free":true}' spellcheck="false"></textarea>
+              <div class="json-actions"><button class="small-primary" id="json-format" type="button">Format JSON</button><button class="format-button" id="json-minify" type="button">Minify</button><button class="format-button" id="json-validate" type="button">Validate</button><button class="text-button" id="json-clear" type="button">Clear</button></div>
+              <div id="json-status" class="json-status" role="status" aria-live="polite">Paste JSON above to get started.</div>
+              <div class="panel-footer"><span class="helper-text">Your JSON is processed locally in your browser.</span><button class="text-button" id="json-copy" type="button">Copy result ↗</button></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-mark">T</div>
+        <div><div class="eyebrow">A LITTLE ABOUT TOOLNEST</div><h2>Useful should feel <span>effortless.</span></h2><p>ToolNest is a growing collection of straightforward online utilities. Our goal is simple: make everyday digital tasks quicker, clearer and easier for everyone.</p></div>
+        <div class="about-points"><div><b>01</b><span>Simple to use</span></div><div><b>02</b><span>Free at the core</span></div><div><b>03</b><span>Built to be useful</span></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/"><span class="brand-mark">T</span><span>Tool<span>Nest</span></span></a>
+      <p>Simple tools for everyday tasks.</p>
+      <div class="footer-links"><a href="#tools">Tools</a><a href="#about">About</a><a href="mailto:hello@toolnest.example">Contact</a></div>
+      <small>© <span id="year"></span> ToolNest. Made to be useful.</small>
+    </footer>
+
+    <script>
+      const $ = (selector) => document.querySelector(selector);
+
+      // Tool navigation
+      document.querySelectorAll(".tool-nav").forEach((button) => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.tool;
+          document.querySelectorAll(".tool-nav").forEach((item) => item.classList.toggle("active", item === button));
+          document.querySelectorAll(".tool-panel").forEach((panel) => {
+            const active = panel.id === `panel-${name}`;
+            panel.hidden = !active;
+            panel.classList.toggle("active", active);
+          });
+        });
+      });
+
+      // Word counter
+      const counterInput = $("#counter-input");
+      function updateCounter() {
+        const text = counterInput.value;
+        const trimmed = text.trim();
+        const words = trimmed ? trimmed.split(/\s+/u).length : 0;
+        const sentences = trimmed ? (trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/gu) || []).filter(s => s.trim()).length : 0;
+        $("#word-count").textContent = words.toLocaleString();
+        $("#char-count").textContent = text.length.toLocaleString();
+        $("#no-space-count").textContent = text.replace(/\s/gu, "").length.toLocaleString();
+        $("#sentence-count").textContent = sentences.toLocaleString();
+        $("#counter-status").textContent = text.length ? `${text.length.toLocaleString()} characters analysed` : "Your text stays in this browser.";
+      }
+      counterInput.addEventListener("input", updateCounter);
+      $("#counter-clear").addEventListener("click", () => { counterInput.value = ""; updateCounter(); counterInput.focus(); });
+
+      // Text formatter
+      const formatterInput = $("#formatter-input");
+      const formatterStatus = $("#formatter-status");
+      document.querySelectorAll("[data-format]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = formatterInput.value;
+          if (!value) { formatterStatus.textContent = "Add some text first."; formatterInput.focus(); return; }
+          const mode = button.dataset.format;
+          const transforms = {
+            upper: () => value.toUpperCase(),
+            lower: () => value.toLowerCase(),
+            title: () => value.toLowerCase().replace(/\b[\p{L}\p{N}]/gu, char => char.toUpperCase()),
+            sentence: () => value.toLowerCase().replace(/(^\s*|[.!?]\s+)([\p{L}])/gu, (match, prefix, letter) => prefix + letter.toUpperCase()),
+            trim: () => value.split("\n").map(line => line.replace(/\s+/gu, " ").trim()).join("\n").trim(),
+            lines: () => value.split("\n").filter(line => line.trim()).join("\n")
+          };
+          formatterInput.value = transforms[mode]();
+          formatterStatus.textContent = "Text updated. Your original text was replaced.";
+        });
+      });
+      $("#formatter-clear").addEventListener("click", () => { formatterInput.value = ""; formatterStatus.textContent = "Text cleared."; });
+      $("#formatter-copy").addEventListener("click", async () => {
+        if (!formatterInput.value) { formatterStatus.textContent = "There is no text to copy."; return; }
+        try { await navigator.clipboard.writeText(formatterInput.value); formatterStatus.textContent = "Copied to clipboard."; }
+        catch { formatterStatus.textContent = "Clipboard access unavailable. Select and copy the text manually."; }
+      });
+
+      // JSON formatter
+      const jsonInput = $("#json-input");
+      const jsonStatus = $("#json-status");
+      function processJSON(mode) {
+        const source = jsonInput.value.trim();
+        if (!source) { jsonStatus.textContent = "Paste JSON above to get started."; jsonStatus.className = "json-status"; return; }
+        try {
+          const parsed = JSON.parse(source);
+          if (mode === "format") jsonInput.value = JSON.stringify(parsed, null, 2);
+          if (mode === "minify") jsonInput.value = JSON.stringify(parsed);
+          jsonStatus.textContent = mode === "validate" ? "Valid JSON — no syntax errors found." : "Success — JSON " + (mode === "format" ? "formatted." : "minified.");
+          jsonStatus.className = "json-status success";
+        } catch (error) {
+          jsonStatus.textContent = "Invalid JSON: " + error.message;
+          jsonStatus.className = "json-status error";
+        }
+      }
+      $("#json-format").addEventListener("click", () => processJSON("format"));
+      $("#json-minify").addEventListener("click", () => processJSON("minify"));
+      $("#json-validate").addEventListener("click", () => processJSON("validate"));
+      $("#json-clear").addEventListener("click", () => { jsonInput.value = ""; jsonStatus.textContent = "JSON cleared."; jsonStatus.className = "json-status"; });
+      $("#json-copy").addEventListener("click", async () => {
+        if (!jsonInput.value) { jsonStatus.textContent = "There is no JSON to copy."; return; }
+        try { await navigator.clipboard.writeText(jsonInput.value); jsonStatus.textContent = "Copied to clipboard."; jsonStatus.className = "json-status success"; }
+        catch { jsonStatus.textContent = "Clipboard access unavailable. Select and copy manually."; jsonStatus.className = "json-status error"; }
+      });
+
+      $("#year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
