@@ -1,36 +1,10 @@
 ---
-import "../styles/global.css";
+import SiteLayout from "../layouts/SiteLayout.astro";
 
 const title = "ToolNest — Free Online Tools for Everyday Work";
 const description = "Simple, free online tools for work, study and everyday life. Count words, format text and validate JSON — right in your browser.";
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f9f8" />
-    <meta name="description" content={description} />
-    <meta name="robots" content="index,follow" />
-    <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="ToolNest home">
-        <span class="brand-mark" aria-hidden="true">T</span>
-        <span>Tool<span>Nest</span></span>
-      </a>
-      <nav class="top-nav" aria-label="Main navigation">
-        <a href="#tools">Tools</a>
-        <a href="#about">About</a>
-      </nav>
-      <a class="header-cta" href="#tools">Explore tools <span aria-hidden="true">↗</span></a>
-    </header>
-
+<SiteLayout title={title} description={description}>
     <main>
       <section class="hero">
         <div class="hero-copy">
@@ -135,13 +109,6 @@ const description = "Simple, free online tools for work, study and everyday life
       </section>
     </main>
 
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="/"><span class="brand-mark">T</span><span>Tool<span>Nest</span></span></a>
-      <p>Simple tools for everyday tasks.</p>
-      <div class="footer-links"><a href="#tools">Tools</a><a href="#about">About</a><a href="mailto:hello@toolnest.example">Contact</a></div>
-      <small>© <span id="year"></span> ToolNest. Made to be useful.</small>
-    </footer>
-
     <script>
       const $ = (selector) => document.querySelector(selector);
 
@@ -228,7 +195,5 @@ const description = "Simple, free online tools for work, study and everyday life
         catch { jsonStatus.textContent = "Clipboard access unavailable. Select and copy manually."; jsonStatus.className = "json-status error"; }
       });
 
-      $("#year").textContent = new Date().getFullYear();
     </script>
-  </body>
-</html>
+</SiteLayout>

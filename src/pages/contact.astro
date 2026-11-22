@@ -1,0 +1,27 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Contact ToolNest";
+const description = "Get in touch with ToolNest about feedback, suggestions, bug reports, or collaboration.";
+const CONTACT_EMAIL = ""; // Replace with a real, monitored contact email address when available.
+---
+<SiteLayout title={title} description={description}>
+  <main class="content-page contact-page">
+    <header class="page-hero">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h1>We’d love to <span>hear from you.</span></h1>
+      <p>Have feedback, a suggestion, a bug report, or a collaboration enquiry? We welcome your thoughts as ToolNest grows.</p>
+    </header>
+
+    <section class="content-card contact-card" aria-labelledby="contact-heading">
+      <div class="contact-icon" aria-hidden="true">✉</div>
+      <div>
+        <div class="eyebrow">CONTACT TOOLNEST</div>
+        <h2 id="contact-heading">Say hello</h2>
+        <p>We have not configured a public contact email yet. Contact details will be added here when a monitored address is available.</p>
+        {!CONTACT_EMAIL && <p class="contact-note">Site owner: set <code>CONTACT_EMAIL</code> in <code>src/pages/contact.astro</code> to enable a direct email link.</p>}
+        {CONTACT_EMAIL && <a class="primary-button contact-email" href={`mailto:${CONTACT_EMAIL}`}>Email ToolNest <span aria-hidden="true">→</span></a>}
+      </div>
+    </section>
+  </main>
+</SiteLayout>

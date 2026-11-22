@@ -1,0 +1,74 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Privacy Policy — ToolNest";
+const description = "Read how ToolNest handles information, browser-based tool inputs, cookies, third-party services, and future changes.";
+---
+<SiteLayout title={title} description={description}>
+  <main class="content-page">
+    <header class="page-hero">
+      <div class="eyebrow">YOUR PRIVACY</div>
+      <h1>Privacy <span>Policy</span></h1>
+      <p>This policy describes what happens when you visit ToolNest and use the tools currently available on this site.</p>
+      <p class="policy-updated">Last updated: November 22, 2026</p>
+    </header>
+
+    <article class="content-card policy-content">
+      <section>
+        <h2>Information we collect</h2>
+        <p>ToolNest does not ask you to create an account, and the site’s current tools do not send the text or JSON you enter to a ToolNest application server. The site does not provide a submission form or otherwise ask you to provide personal information.</p>
+        <p>Like other websites, the hosting provider may process technical information about requests to deliver and protect the site. We do not control the provider’s processing; see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare’s privacy policy</a> for its practices.</p>
+      </section>
+
+      <section>
+        <h2>How our tools process your input</h2>
+        <p>The Word &amp; Character Counter, Text Formatter, and JSON Formatter &amp; Validator run in your browser. The page’s JavaScript reads your input to calculate counts, transform text, or parse and format JSON. The current implementation does not upload that input to ToolNest. Avoid using a shared or untrusted device for sensitive information.</p>
+      </section>
+
+      <section>
+        <h2>Cookies and local storage</h2>
+        <p>The current ToolNest site does not intentionally set cookies or use browser local storage or session storage. Our code does not save tool input between visits. Hosting or third-party providers may use technical mechanisms as part of their services; their own privacy information applies to those services.</p>
+      </section>
+
+      <section>
+        <h2>Third-party services</h2>
+        <p>This site loads fonts from Google Fonts. When your browser requests those fonts, Google may receive technical information such as your IP address and browser details. This service is provided by Google and is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google’s privacy policy</a>. The site is hosted on Cloudflare as described above.</p>
+      </section>
+
+      <section>
+        <h2>Analytics</h2>
+        <p>We have not configured an analytics service in the current site code. If analytics is introduced, we will update this policy to describe the service and relevant data practices.</p>
+      </section>
+
+      <section>
+        <h2>Advertising</h2>
+        <p>We have not configured advertising or Google AdSense in the current site code. If advertising is introduced, we will update this policy to explain the advertising services and any related cookies or data use before or when they are added.</p>
+      </section>
+
+      <section>
+        <h2>External links</h2>
+        <p>ToolNest may link to other websites, including service providers’ policies. We do not control external sites or their privacy practices. Review their policies when you visit them.</p>
+      </section>
+
+      <section>
+        <h2>Data security</h2>
+        <p>We take care to describe the site’s current behavior accurately, but no website or internet transmission can be guaranteed to be completely secure. The tools’ browser-based processing means their input is not sent to ToolNest by the current implementation; it is not a guarantee about your device, browser, network, or third-party services.</p>
+      </section>
+
+      <section>
+        <h2>Children’s privacy</h2>
+        <p>ToolNest is a general-purpose utility site and is not specifically directed to children. We do not knowingly ask children to provide personal information.</p>
+      </section>
+
+      <section>
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy as the site changes. In particular, we will update it when new services or features that affect data practices are introduced. The latest revision date appears at the top of this page.</p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>No contact email is currently configured. See the <a href="/contact">Contact Us page</a> for the current contact information.</p>
+      </section>
+    </article>
+  </main>
+</SiteLayout>

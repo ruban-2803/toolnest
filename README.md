@@ -4,8 +4,9 @@ A lightweight, professional global utility website built with Astro. The first v
 - Word & character counter
 - Text formatter
 - JSON formatter / validator
+- About, privacy policy, and contact pages
 
-All three tools run in the visitor's browser. Text and JSON are not uploaded to a server.
+All three tools run in the visitor's browser. The current implementation does not upload tool input to a server.
 
 ## Requirements
 - Node.js 20.3.0+ (Node 22 LTS recommended)
@@ -32,12 +33,10 @@ The static site is generated in `dist/`.
 4. Build output directory: `dist`
 5. Deploy.
 
-## Before public launch
-- Replace the example contact email in `src/pages/index.astro`.
-- Add a real Privacy Policy and Terms page after reviewing your actual analytics/ad setup.
-- Add a custom domain and verify it in Google Search Console.
-- Test on mobile and desktop.
-- Do not add ads until the site has useful content, a clear privacy policy and a good user experience.
+## Contact details
+No contact email is currently configured. To add one, set `CONTACT_EMAIL` in `src/pages/contact.astro` to a real, monitored address.
+
+The privacy policy describes the current analytics and advertising setup. Update it if new services that affect data practices are introduced.
 
 ## Project structure
 ```text
@@ -45,8 +44,13 @@ toolnest/
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── layouts/
+│   │   └── SiteLayout.astro
 │   ├── pages/
-│   │   └── index.astro
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   └── privacy.astro
 │   └── styles/
 │       └── global.css
 ├── astro.config.mjs

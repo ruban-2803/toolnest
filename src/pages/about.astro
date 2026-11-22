@@ -1,0 +1,30 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "About ToolNest — Simple Online Tools";
+const description = "Learn about ToolNest and our mission to make everyday online tasks simple, fast, and accessible to everyone.";
+---
+<SiteLayout title={title} description={description}>
+  <main class="content-page">
+    <header class="page-hero">
+      <div class="eyebrow">ABOUT TOOLNEST</div>
+      <h1>Useful tools, <span>without the fuss.</span></h1>
+      <p>ToolNest is a collection of free, browser-based utilities for the small tasks that come up every day.</p>
+    </header>
+
+    <section class="content-card about-content" aria-labelledby="mission-heading">
+      <div class="content-copy">
+        <h2 id="mission-heading">Our mission</h2>
+        <p>We want to make everyday online tasks simple, fast, and accessible to everyone. ToolNest brings practical utilities together in one easy-to-use place, whether you are working, studying, or taking care of an everyday task.</p>
+        <p>Our tools are free to use and do not require an account. The current toolkit includes a <a href="/#tools">Word &amp; Character Counter, Text Formatter, and JSON Formatter &amp; Validator</a>.</p>
+        <p>We focus on simplicity, privacy, and ease of use: each tool is designed to help you get a task done without unnecessary steps.</p>
+      </div>
+      <aside class="about-callout">
+        <span class="about-callout-mark" aria-hidden="true">T</span>
+        <strong>Simple by design</strong>
+        <p>Open a tool, do what you came to do, and get on with your day.</p>
+        <a class="inline-link" href="/#tools">Explore the tools <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+  </main>
+</SiteLayout>
