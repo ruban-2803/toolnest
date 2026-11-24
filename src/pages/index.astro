@@ -2,7 +2,7 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 
 const title = "ToolNest — Free Online Tools for Everyday Work";
-const description = "Simple, free online tools for work, study and everyday life. Count words, format text and validate JSON — right in your browser.";
+const description = "Free online tools for text, JSON, CSV and image conversion. Count words, format text, and convert PNG, JPG, WEBP, CSV and JSON files in your browser.";
 ---
 <SiteLayout title={title} description={description}>
     <main>
@@ -10,7 +10,7 @@ const description = "Simple, free online tools for work, study and everyday life
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY DIGITAL TOOLKIT</div>
           <h1>Get useful things<br /><span>done, simply.</span></h1>
-          <p class="hero-description">A growing collection of free, practical tools for work, study and everyday life. No account. No fuss.</p>
+          <p class="hero-description">Free, practical tools for work, study and everyday life, including image and data converters. No account. No fuss.</p>
           <div class="hero-actions">
             <a class="primary-button" href="#tools">Explore free tools <span aria-hidden="true">→</span></a>
             <span class="privacy-note"><span aria-hidden="true">✓</span> Works right in your browser</span>
@@ -30,7 +30,7 @@ const description = "Simple, free online tools for work, study and everyday life
               <div class="visual-tool"><span class="visual-tool-icon green">Aa</span><b>Text tools</b><small>Write with clarity</small></div>
               <div class="visual-tool"><span class="visual-tool-icon blue">{ }</span><b>JSON tools</b><small>Format with ease</small></div>
               <div class="visual-tool"><span class="visual-tool-icon orange">#</span><b>Word count</b><small>Know your numbers</small></div>
-              <div class="visual-tool"><span class="visual-tool-icon purple">↗</span><b>More tools</b><small>Coming soon</small></div>
+              <div class="visual-tool"><span class="visual-tool-icon purple">↗</span><b>File tools</b><small>Convert formats</small></div>
             </div>
             <div class="visual-status"><span></span> Ready when you are</div>
           </div>
@@ -49,7 +49,7 @@ const description = "Simple, free online tools for work, study and everyday life
       <section class="tools-section" id="tools">
         <div class="section-heading">
           <div><div class="eyebrow">THE TOOLKIT</div><h2>Small tools. <span>Big help.</span></h2></div>
-          <p>Choose a tool and get straight to work. More useful utilities are on the way.</p>
+          <p>Choose a tool and get straight to work. Explore text utilities and browser-based file converters.</p>
         </div>
 
         <div class="tool-layout">
@@ -58,7 +58,7 @@ const description = "Simple, free online tools for work, study and everyday life
             <button class="tool-nav active" data-tool="counter"><span class="nav-icon nav-orange">Aa</span><span><b>Word counter</b><small>Count and measure text</small></span><span class="nav-arrow">›</span></button>
             <button class="tool-nav" data-tool="formatter"><span class="nav-icon nav-green">Tt</span><span><b>Text formatter</b><small>Clean and transform text</small></span><span class="nav-arrow">›</span></button>
             <button class="tool-nav" data-tool="json"><span class="nav-icon nav-blue">{ }</span><span><b>JSON formatter</b><small>Format and validate JSON</small></span><span class="nav-arrow">›</span></button>
-            <div class="sidebar-coming"><span class="coming-spark">✳</span><b>More tools coming</b><small>We're building a more useful toolkit, one tool at a time.</small></div>
+            <div class="sidebar-coming"><span class="coming-spark">✳</span><b>File converters</b><small>Convert images and data files privately in your browser.</small><a class="inline-link" href="#converters">Explore converters <span aria-hidden="true">→</span></a></div>
           </aside>
 
           <div class="tool-workspace">
@@ -99,6 +99,22 @@ const description = "Simple, free online tools for work, study and everyday life
               <div class="panel-footer"><span class="helper-text">Your JSON is processed locally in your browser.</span><button class="text-button" id="json-copy" type="button">Copy result ↗</button></div>
             </section>
           </div>
+        </div>
+      </section>
+
+      <section class="converters-section" id="converters" aria-labelledby="converters-heading">
+        <div class="section-heading">
+          <div><div class="eyebrow">IMAGE &amp; DATA TOOLS</div><h2 id="converters-heading">Convert files, <span>right here.</span></h2></div>
+          <p>Convert popular image and data formats locally in your browser. Your files are never uploaded.</p>
+        </div>
+        <div class="converter-grid">
+          <a class="converter-tile" href="/tools/png-to-jpg/"><span class="converter-format">PNG <span aria-hidden="true">→</span> JPG</span><strong>PNG to JPG</strong><span>Turn PNG images into JPG files. Transparent areas become white.</span></a>
+          <a class="converter-tile" href="/tools/jpg-to-png/"><span class="converter-format">JPG <span aria-hidden="true">→</span> PNG</span><strong>JPG to PNG</strong><span>Convert JPG and JPEG images to PNG format.</span></a>
+          <a class="converter-tile" href="/tools/png-to-webp/"><span class="converter-format">PNG <span aria-hidden="true">→</span> WEBP</span><strong>PNG to WEBP</strong><span>Convert PNG images to WEBP while keeping transparency.</span></a>
+          <a class="converter-tile" href="/tools/jpg-to-webp/"><span class="converter-format">JPG <span aria-hidden="true">→</span> WEBP</span><strong>JPG to WEBP</strong><span>Make a WEBP image from a JPG or JPEG file.</span></a>
+          <a class="converter-tile" href="/tools/webp-to-jpg/"><span class="converter-format">WEBP <span aria-hidden="true">→</span> JPG</span><strong>WEBP to JPG</strong><span>Convert WEBP images to widely compatible JPG files.</span></a>
+          <a class="converter-tile" href="/tools/csv-to-json/"><span class="converter-format">CSV <span aria-hidden="true">→</span> JSON</span><strong>CSV to JSON</strong><span>Convert CSV rows into JSON objects, including quoted fields.</span></a>
+          <a class="converter-tile" href="/tools/json-to-csv/"><span class="converter-format">JSON <span aria-hidden="true">→</span> CSV</span><strong>JSON to CSV</strong><span>Turn an array of JSON objects into an escaped CSV file.</span></a>
         </div>
       </section>
 

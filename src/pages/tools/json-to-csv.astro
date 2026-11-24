@@ -1,0 +1,6 @@
+---
+import FileConverter from "../../components/FileConverter.astro";
+const title = "JSON to CSV Converter — Free Online Data Tool | ToolNest";
+const description = "Convert JSON arrays of objects to CSV online for free. CSV values are escaped correctly and your data stays in your browser.";
+---
+<FileConverter title={title} description={description} format="json-to-csv" accepted="application/json,.json" fileLabel="JSON" details="Convert a JSON array of objects into a CSV table. Fields containing commas, quotes, or line breaks are escaped, and missing values are left blank." />

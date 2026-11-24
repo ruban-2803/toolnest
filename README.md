@@ -4,9 +4,11 @@ A lightweight, professional global utility website built with Astro. The first v
 - Word & character counter
 - Text formatter
 - JSON formatter / validator
+- PNG, JPG, and WEBP image converters
+- CSV to JSON and JSON to CSV converters
 - About, privacy policy, and contact pages
 
-All three tools run in the visitor's browser. The current implementation does not upload tool input to a server.
+All tools run in the visitor's browser. The current implementation does not upload tool input or files to a server. Image conversions use the Canvas API; CSV conversions handle quoted fields, commas, escaped quotes, and embedded line breaks.
 
 ## Requirements
 - Node.js 20.3.0+ (Node 22 LTS recommended)
@@ -36,7 +38,7 @@ The static site is generated in `dist/`.
 ## Contact details
 No contact email is currently configured. To add one, set `CONTACT_EMAIL` in `src/pages/contact.astro` to a real, monitored address.
 
-The privacy policy describes the current analytics and advertising setup. Update it if new services that affect data practices are introduced.
+Analytics and advertising are not implemented. Update the privacy policy if services that affect data practices are introduced.
 
 ## Project structure
 ```text
@@ -46,13 +48,27 @@ toolnest/
 ├── src/
 │   ├── layouts/
 │   │   └── SiteLayout.astro
+│   ├── components/
+│   │   └── FileConverter.astro
 │   ├── pages/
 │   │   ├── index.astro
 │   │   ├── about.astro
 │   │   ├── contact.astro
-│   │   └── privacy.astro
+│   │   ├── privacy.astro
+│   │   └── tools/
+│   │       ├── png-to-jpg.astro
+│   │       ├── jpg-to-png.astro
+│   │       ├── png-to-webp.astro
+│   │       ├── jpg-to-webp.astro
+│   │       ├── webp-to-jpg.astro
+│   │       ├── csv-to-json.astro
+│   │       └── json-to-csv.astro
+│   ├── scripts/
+│   │   └── file-converters.js
 │   └── styles/
 │       └── global.css
+├── tests/
+│   └── file-converters.test.js
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json

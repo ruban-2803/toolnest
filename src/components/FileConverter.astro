@@ -1,0 +1,52 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  format: string;
+  accepted: string;
+  fileLabel: string;
+  details: string;
+}
+
+const { title, description, format, accepted, fileLabel, details } = Astro.props;
+---
+<SiteLayout title={title} description={description}>
+  <main class="content-page converter-page">
+    <header class="page-hero">
+      <div class="eyebrow">FREE ONLINE FILE CONVERTER</div>
+      <h1>{title.split(" — ")[0]}</h1>
+      <p>{description}</p>
+    </header>
+
+    <section class="content-card converter-card" data-converter={format} aria-label={title}>
+      <label class="field-label" for={`${format}-file`}>Choose your {fileLabel} file</label>
+      <input id={`${format}-file`} class="converter-input" type="file" accept={accepted} />
+      <p class="selected-file" aria-live="polite">No file selected</p>
+      <div class="converter-actions">
+        <button class="small-primary" type="button" data-convert>Convert file</button>
+        <a class="small-primary download-result" hidden>Download converted file</a>
+      </div>
+      <p class="converter-status" role="status" aria-live="polite">Choose a file to get started.</p>
+      <p class="converter-privacy">Your file is processed locally in your browser and is never uploaded.</p>
+    </section>
+
+    <section class="converter-details">
+      <h2>About this {format.includes("csv") || format.includes("json") ? "data" : "image"} converter</h2>
+      <p>{details}</p>
+      <h2>How to convert</h2>
+      <ol>
+        <li>Select a {fileLabel} file from your device.</li>
+        <li>Choose <strong>Convert file</strong> and wait for the result.</li>
+        <li>Download the converted file to your device.</li>
+      </ol>
+      {format.includes("png-to-jpg") && <p>JPEG does not support transparency, so transparent areas are filled with white.</p>}
+      <a class="inline-link" href="/#converters">Explore all file converters <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+</SiteLayout>
+
+<script>
+  import "../scripts/file-converters.js";
+</script>
